@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxx41d1dwi8qq"]
+[gd_scene load_steps=17 format=3 uid="uid://bxx41d1dwi8qq"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_2delp"]
 [ext_resource type="PackedScene" uid="uid://c7v4eb5coam5h" path="res://Scenes/player.tscn" id="1_ydv5x"]
+[ext_resource type="PackedScene" uid="uid://na40ceawxayl" path="res://Scenes/kill_zone.tscn" id="2_p4rum"]
 [ext_resource type="PackedScene" uid="uid://gafx30pueqqf" path="res://Scenes/planet.tscn" id="2_wcsni"]
 [ext_resource type="Texture2D" uid="uid://cs1enp7jmunjl" path="res://Sprites/bg.png" id="3_8bttv"]
+[ext_resource type="Texture2D" uid="uid://5mjhw0tvfx3r" path="res://Sprites/Planets/Lights/Sun.png" id="3_knrsd"]
 [ext_resource type="PackedScene" uid="uid://8fmon64nsglg" path="res://Scenes/button.tscn" id="4_4l2yj"]
 [ext_resource type="Texture2D" uid="uid://dlpjaedshi0sg" path="res://Sprites/Player/spritesheet_retina.png" id="4_u1dm7"]
 [ext_resource type="PackedScene" uid="uid://c07rdenm3wpco" path="res://Scenes/gravity_zone.tscn" id="6_rghyh"]
@@ -11,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://clik6qdkx14mh" path="res://Scenes/UI/JumpLogo.tscn" id="9_peblj"]
 [ext_resource type="PackedScene" uid="uid://x8ldncy80akc" path="res://Scenes/UI/data_bar.tscn" id="9_tb622"]
 [ext_resource type="Texture2D" uid="uid://dw1jcxoshxjmj" path="res://Sprites/Planets/Lights/sphere1.png" id="11_i2nvb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_subbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xqhl1"]
 resource_name = "mainTiles"
@@ -381,6 +385,19 @@ script = ExtResource("1_2delp")
 default_gravity_vector = Vector2(2.08165e-12, 1)
 
 [node name="2D" type="Node2D" parent="."]
+
+[node name="KillZone" parent="2D" node_paths=PackedStringArray("followed_body") instance=ExtResource("2_p4rum")]
+position = Vector2(0, 1408)
+follow_body = true
+followed_body = NodePath("../Player")
+locking = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2D/KillZone"]
+shape = SubResource("WorldBoundaryShape2D_subbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="2D/KillZone"]
+scale = Vector2(5, 1)
+texture = ExtResource("3_knrsd")
 
 [node name="IdleMonster" parent="2D" instance=ExtResource("7_q88bn")]
 position = Vector2(251, -41)
