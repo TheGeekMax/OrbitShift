@@ -1,0 +1,105 @@
+[gd_scene load_steps=38 format=3 uid="uid://gafx30pueqqf"]
+
+[ext_resource type="Script" path="res://Scripts/planet.gd" id="1_v4tp4"]
+[ext_resource type="Texture2D" uid="uid://otu16ee11duc" path="res://Sprites/Planets/Noises/noise06.png" id="1_y7nv8"]
+[ext_resource type="Texture2D" uid="uid://w54uno3607lx" path="res://Sprites/Planets/Noises/noise08.png" id="2_b58f4"]
+[ext_resource type="Texture2D" uid="uid://dw1jcxoshxjmj" path="res://Sprites/Planets/Lights/sphere1.png" id="3_hxpk1"]
+[ext_resource type="Script" path="res://Scripts/sprite_randomizer.gd" id="4_ld16o"]
+[ext_resource type="Texture2D" uid="uid://xrk5lepfsxst" path="res://Sprites/Planets/Noises/noise00.png" id="5_8bi64"]
+[ext_resource type="Texture2D" uid="uid://qeipduf7vxud" path="res://Sprites/Planets/Lights/border.png" id="5_d271r"]
+[ext_resource type="Texture2D" uid="uid://uibyl8ih8shr" path="res://Sprites/Planets/Noises/noise01.png" id="6_fee53"]
+[ext_resource type="Texture2D" uid="uid://dbpc5h77m0gln" path="res://Sprites/Planets/Noises/noise02.png" id="7_7cknq"]
+[ext_resource type="Script" path="res://Scripts/Rotator.gd" id="7_m0222"]
+[ext_resource type="Texture2D" uid="uid://ddn5w7n774m4q" path="res://Sprites/Planets/Noises/noise03.png" id="8_kq7l3"]
+[ext_resource type="Texture2D" uid="uid://hjro2ava3abv" path="res://Sprites/Planets/Noises/noise04.png" id="9_jwndj"]
+[ext_resource type="Texture2D" uid="uid://dqa4sfqrw4vqq" path="res://Sprites/Planets/Noises/noise05.png" id="10_giwxt"]
+[ext_resource type="Texture2D" uid="uid://bbw3xql1h8bgn" path="res://Sprites/Planets/Noises/noise07.png" id="11_wh3x4"]
+[ext_resource type="Texture2D" uid="uid://djb5btwyokqg6" path="res://Sprites/Planets/Noises/noise09.png" id="12_26jnx"]
+[ext_resource type="Texture2D" uid="uid://hphe755gex3n" path="res://Sprites/Planets/Noises/noise10.png" id="13_f3e5p"]
+[ext_resource type="Texture2D" uid="uid://dklh5hpoir3i1" path="res://Sprites/Planets/Noises/noise11.png" id="14_6kdbg"]
+[ext_resource type="Texture2D" uid="uid://c7he6w8mvbo3b" path="res://Sprites/Planets/Noises/noise12.png" id="15_i5qxx"]
+[ext_resource type="Texture2D" uid="uid://bx3yg2j1xm2ja" path="res://Sprites/Planets/Noises/noise13.png" id="16_8b6fe"]
+[ext_resource type="Texture2D" uid="uid://cfag3ksiu8ohx" path="res://Sprites/Planets/Noises/noise14.png" id="17_0x2x1"]
+[ext_resource type="Texture2D" uid="uid://vd6i8w5sa4n8" path="res://Sprites/Planets/Noises/noise15.png" id="18_u8b82"]
+[ext_resource type="Texture2D" uid="uid://ccylp273y2jya" path="res://Sprites/Planets/Noises/noise16.png" id="19_uv71m"]
+[ext_resource type="Texture2D" uid="uid://dphsbn73dn5hp" path="res://Sprites/Planets/Noises/noise17.png" id="20_1myry"]
+[ext_resource type="Texture2D" uid="uid://ccic1fxtvknbt" path="res://Sprites/Planets/Noises/noise18.png" id="21_itbvk"]
+[ext_resource type="Texture2D" uid="uid://dridqt2hdskt1" path="res://Sprites/Planets/Noises/noise19.png" id="22_jdfm1"]
+[ext_resource type="Texture2D" uid="uid://7ga8vfucf0dn" path="res://Sprites/Planets/Noises/noise20.png" id="23_bri8p"]
+[ext_resource type="Texture2D" uid="uid://btejrud0638w6" path="res://Sprites/Planets/Noises/noise21.png" id="24_nayae"]
+[ext_resource type="Texture2D" uid="uid://c0gnggx30picj" path="res://Sprites/Planets/Noises/noise22.png" id="25_a2myv"]
+[ext_resource type="Texture2D" uid="uid://bsto6nafoyef2" path="res://Sprites/Planets/Noises/noise23.png" id="26_gj743"]
+[ext_resource type="Texture2D" uid="uid://ckqd0y4n4sblv" path="res://Sprites/Planets/Noises/noise24.png" id="27_ja0fq"]
+[ext_resource type="Texture2D" uid="uid://b72uqrip1otd4" path="res://Sprites/Planets/Noises/noise25.png" id="28_rt76g"]
+[ext_resource type="Texture2D" uid="uid://c8odo4lenon43" path="res://Sprites/Planets/Noises/noise26.png" id="29_bvtfr"]
+[ext_resource type="Texture2D" uid="uid://2ndi15tkcv3n" path="res://Sprites/Planets/Noises/noise27.png" id="30_1gehr"]
+[ext_resource type="Texture2D" uid="uid://cvm6eipbd5vkn" path="res://Sprites/Planets/Lights/border_small.png" id="32_qadij"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hnsea"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xaxr3"]
+radius = 970.297
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvbmr"]
+radius = 517.325
+
+[node name="Planet" type="Node2D" groups=["Snapable"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_v4tp4")
+
+[node name="Clouds" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.6)
+z_index = 2
+texture = ExtResource("1_y7nv8")
+flip_h = true
+script = ExtResource("4_ld16o")
+SpriteArray = Array[Texture2D]([ExtResource("5_8bi64"), ExtResource("6_fee53"), ExtResource("7_7cknq"), ExtResource("8_kq7l3"), ExtResource("9_jwndj"), ExtResource("10_giwxt"), ExtResource("1_y7nv8"), ExtResource("11_wh3x4"), ExtResource("2_b58f4"), ExtResource("12_26jnx"), ExtResource("13_f3e5p"), ExtResource("14_6kdbg"), ExtResource("15_i5qxx"), ExtResource("16_8b6fe"), ExtResource("17_0x2x1"), ExtResource("18_u8b82"), ExtResource("19_uv71m"), ExtResource("20_1myry"), ExtResource("21_itbvk"), ExtResource("22_jdfm1"), ExtResource("23_bri8p"), ExtResource("24_nayae"), ExtResource("25_a2myv"), ExtResource("26_gj743"), ExtResource("27_ja0fq"), ExtResource("28_rt76g"), ExtResource("29_bvtfr"), ExtResource("30_1gehr")])
+
+[node name="Ground" type="Sprite2D" parent="."]
+modulate = Color(0.184314, 1, 0.356863, 1)
+z_index = 1
+texture = ExtResource("2_b58f4")
+script = ExtResource("4_ld16o")
+SpriteArray = Array[Texture2D]([ExtResource("5_8bi64"), ExtResource("6_fee53"), ExtResource("7_7cknq"), ExtResource("8_kq7l3"), ExtResource("9_jwndj"), ExtResource("10_giwxt"), ExtResource("1_y7nv8"), ExtResource("11_wh3x4"), ExtResource("2_b58f4"), ExtResource("12_26jnx"), ExtResource("13_f3e5p"), ExtResource("14_6kdbg"), ExtResource("15_i5qxx"), ExtResource("16_8b6fe"), ExtResource("17_0x2x1"), ExtResource("18_u8b82"), ExtResource("19_uv71m"), ExtResource("20_1myry"), ExtResource("21_itbvk"), ExtResource("22_jdfm1"), ExtResource("23_bri8p"), ExtResource("24_nayae"), ExtResource("25_a2myv"), ExtResource("26_gj743"), ExtResource("27_ja0fq"), ExtResource("28_rt76g"), ExtResource("29_bvtfr"), ExtResource("30_1gehr")])
+randomize_color = true
+randomize_rotation = true
+
+[node name="Sphere" type="Sprite2D" parent="."]
+modulate = Color(0.262745, 0.458824, 1, 1)
+material = SubResource("CanvasItemMaterial_hnsea")
+texture = ExtResource("3_hxpk1")
+
+[node name="Border Small" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.89844, 1.89844)
+texture = ExtResource("32_qadij")
+script = ExtResource("7_m0222")
+speed = 0.1
+
+[node name="Border" type="Sprite2D" parent="."]
+scale = Vector2(1.92383, 1.92383)
+texture = ExtResource("5_d271r")
+script = ExtResource("7_m0222")
+speed = 0.1
+
+[node name="Area2D" type="Area2D" parent="." groups=["Snapable"]]
+gravity_space_override = 3
+gravity_point = true
+gravity_point_unit_distance = 1024.0
+gravity_point_center = Vector2(2.08165e-12, 2.08165e-12)
+gravity_direction = Vector2(2.08165e-12, 2.08165e-12)
+linear_damp_space_override = 3
+angular_damp_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xaxr3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_tvbmr")
+debug_color = Color(0.964706, 0, 0.501961, 0.431373)
+
+[connection signal="property_list_changed" from="." to="." method="_on_property_list_changed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

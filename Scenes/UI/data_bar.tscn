@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://x8ldncy80akc"]
+
+[ext_resource type="Script" path="res://Scripts/data_bar.gd" id="1_6kebn"]
+
+[node name="DataBar" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6kebn")

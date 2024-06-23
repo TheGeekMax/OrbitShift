@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb80ir22fobvx"]
+
+[ext_resource type="Script" path="res://Scripts/ParentSnapper.gd" id="1_nim12"]
+
+[node name="ParrentSnapper" type="Area2D"]
+script = ExtResource("1_nim12")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

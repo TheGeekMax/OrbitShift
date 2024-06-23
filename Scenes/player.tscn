@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7v4eb5coam5h"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_npg8h"]
+[ext_resource type="Texture2D" uid="uid://dlpjaedshi0sg" path="res://Sprites/Player/spritesheet_retina.png" id="2_sqeh1"]
+[ext_resource type="Texture2D" uid="uid://cfv1sgryqm1lr" path="res://Sprites/Player/beam.png" id="3_3ybur"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwkki"]
+atlas = ExtResource("2_sqeh1")
+region = Rect2(1176, 0, 80, 124)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dt5ig"]
+radius = 37.0
+height = 120.0
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 15
+script = ExtResource("1_npg8h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_rwkki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dt5ig")
+
+[node name="EjectLine" type="Line2D" parent="."]
+visible = false
+modulate = Color(1, 0.054902, 0, 1)
+points = PackedVector2Array(2.08165e-12, 2.08165e-12, 300, 300)
+texture = ExtResource("3_3ybur")
+texture_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 1

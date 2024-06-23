@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://lmhav2pluf1h"]
+
+[ext_resource type="Texture2D" uid="uid://dlpjaedshi0sg" path="res://Sprites/Player/spritesheet_retina.png" id="1_2xy5u"]
+[ext_resource type="PackedScene" uid="uid://bb80ir22fobvx" path="res://Scenes/Nodes/ParentSnapper.tscn" id="2_glh5t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8e8b"]
+atlas = ExtResource("1_2xy5u")
+region = Rect2(1152, 896, 128, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1tgaj"]
+radius = 11.0454
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_36ap2"]
+radius = 38.0
+height = 114.0
+
+[node name="IdleMonster" type="Sprite2D"]
+texture = SubResource("AtlasTexture_s8e8b")
+
+[node name="ParrentSnapper" parent="." instance=ExtResource("2_glh5t")]
+floating = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParrentSnapper"]
+shape = SubResource("CircleShape2D_1tgaj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_36ap2")

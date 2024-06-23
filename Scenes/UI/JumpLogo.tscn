@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://clik6qdkx14mh"]
+
+[ext_resource type="Texture2D" uid="uid://dk6xy6j6pmd5t" path="res://Sprites/Player/laser_jump.png" id="1_n56qj"]
+
+[node name="JumpLogo" type="TextureRect"]
+modulate = Color(0.752941, 0, 0, 1)
+offset_right = 100.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+texture = ExtResource("1_n56qj")
+expand_mode = 1

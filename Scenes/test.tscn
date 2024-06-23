@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dplwj0nc47ky7"]
+
+[ext_resource type="Texture2D" uid="uid://dlpjaedshi0sg" path="res://Sprites/Player/spritesheet_retina.png" id="1_h4o1m"]
+[ext_resource type="Script" path="res://Scripts/normalplayer.gd" id="1_xbjuj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh8pt"]
+atlas = ExtResource("1_h4o1m")
+region = Rect2(1174, 128, 84, 127)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q8vx8"]
+radius = 39.0512
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_xbjuj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_eh8pt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q8vx8")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://8fmon64nsglg"]
+
+[ext_resource type="Texture2D" uid="uid://dlpjaedshi0sg" path="res://Sprites/Player/spritesheet_retina.png" id="1_2fm3h"]
+[ext_resource type="Script" path="res://Scripts/button.gd" id="2_7ufm5"]
+[ext_resource type="PackedScene" uid="uid://bb80ir22fobvx" path="res://Scenes/Nodes/ParentSnapper.tscn" id="2_wffxt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldc78"]
+atlas = ExtResource("1_2fm3h")
+region = Rect2(1039, 33, 98, 65)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ixkks"]
+radius = 29.2746
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47wxb"]
+size = Vector2(58, 40)
+
+[node name="Button" type="Sprite2D"]
+modulate = Color(0.290196, 0.439216, 0.839216, 1)
+z_as_relative = false
+texture = SubResource("AtlasTexture_ldc78")
+script = ExtResource("2_7ufm5")
+remove_colision = false
+delete_object = true
+
+[node name="ParentSnapper" parent="." instance=ExtResource("2_wffxt")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParentSnapper"]
+shape = SubResource("CircleShape2D_ixkks")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="colision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colision"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_47wxb")
+
+[node name="press_detection" type="RayCast2D" parent="."]
+target_position = Vector2(2.08165e-12, -50)

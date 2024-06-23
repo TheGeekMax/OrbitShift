@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c07rdenm3wpco"]
+
+[ext_resource type="Texture2D" uid="uid://ipsvee8w43s3" path="res://Sprites/Planets/Lights/arrows.png" id="1_c6ha4"]
+[ext_resource type="Script" path="res://Scripts/GravityZone.gd" id="1_rvmvp"]
+[ext_resource type="Script" path="res://Scripts/zone.gd" id="3_fj870"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8vgv"]
+size = Vector2(128, 128)
+
+[node name="GravityZone" type="Sprite2D"]
+modulate = Color(1, 0.486104, 0.418608, 1)
+texture_repeat = 2
+position = Vector2(-1, 0)
+rotation = 1.5708
+texture = ExtResource("1_c6ha4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 128, 128)
+script = ExtResource("1_rvmvp")
+upColor = Color(1, 0.486104, 0.418608, 1)
+downColor = Color(0.31321, 0.522067, 1, 1)
+leftColor = Color(0.86683, 0.86683, 0.86683, 1)
+rightColor = Color(0.303997, 1, 0.27737, 1)
+
+[node name="GravityDetection" type="Area2D" parent="."]
+
+[node name="zone" type="CollisionShape2D" parent="GravityDetection"]
+shape = SubResource("RectangleShape2D_f8vgv")
+debug_color = Color(0, 0.6, 0.701961, 0)
+script = ExtResource("3_fj870")
+
+[connection signal="body_entered" from="GravityDetection" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="GravityDetection" to="." method="_on_area_2d_body_exited"]
